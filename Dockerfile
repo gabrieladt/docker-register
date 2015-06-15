@@ -7,7 +7,9 @@ RUN apt-get install -y wget python python-pip python-dev libssl-dev libffi-dev b
 RUN mkdir /app
 WORKDIR /app
 
+RUN mkdir -p /usr/local/bin
 ADD docker-gen /usr/local/bin
+RUN chmod +x /usr/local/bin/docker-gen
 
 RUN pip install python-etcd
 
